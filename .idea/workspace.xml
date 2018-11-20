@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a80f6532-3cc2-463f-83ab-546c2540bfc1" name="Default Changelist" comment="IntSet" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path=".idea/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/project/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-578789004">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="properties" value="1" />
+          <entry key="sbt" value="1" />
+          <entry key="scala" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Properties" value="1" />
+          <entry key="Scala" value="1" />
+          <entry key="sbt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="scala" value="99" />
+          <entry key="txt" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="Scala" value="99" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/build.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.sbt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/coursera/fpis/classes/IntSets.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/../ab-booking-api-client" value="2967257278000" />
+        <entry key="$PROJECT_DIR$/../ab-dimension-worker" value="12143452968000" />
+        <entry key="$PROJECT_DIR$/../ab-er-consumer" value="2970859042000" />
+        <entry key="$PROJECT_DIR$/../abyss-avro-schemas" value="4536172599000" />
+        <entry key="$PROJECT_DIR$/../abyss-charon" value="3023078060000" />
+        <entry key="$PROJECT_DIR$/../abyss-data-location-service" value="3024767754000" />
+        <entry key="$PROJECT_DIR$/../abyss-spark" value="12095752680000" />
+        <entry key="$PROJECT_DIR$/../abyss-spark-vincent" value="12100624229000" />
+        <entry key="$PROJECT_DIR$/../ads-dimension-service" value="3035864438000" />
+        <entry key="$PROJECT_DIR$/../ads-forecasting-service" value="3015163146000" />
+        <entry key="$PROJECT_DIR$/../ads-reporting-smoke-tests" value="1506010826000" />
+        <entry key="$PROJECT_DIR$/../ate-api-population-v2" value="2981912506000" />
+        <entry key="$PROJECT_DIR$/../ate-privacy-broker" value="3040544412000" />
+        <entry key="$PROJECT_DIR$/../aybss-spark-master" value="12231753944000" />
+        <entry key="$PROJECT_DIR$/../fork_self-serve-db" value="3038797134000" />
+        <entry key="$PROJECT_DIR$/../moderation2" value="2960165336000" />
+        <entry key="$PROJECT_DIR$/../oms-smoke-test" value="1513597161000" />
+        <entry key="$PROJECT_DIR$/../payment2" value="2960179722000" />
+        <entry key="$PROJECT_DIR$/../payment_loadtest" value="2989207089000" />
+        <entry key="$PROJECT_DIR$/../self-serve-api-ad-mgmt" value="2962043048000" />
+        <entry key="$PROJECT_DIR$/../self-serve-api-reporting" value="2964810911000" />
+        <entry key="$PROJECT_DIR$/../self-serve-db" value="2960660286000" />
+        <entry key="$PROJECT_DIR$/../self-serve-load-test" value="1485858899000" />
+        <entry key="$PROJECT_DIR$/../self-serve-profile-service" value="2959828340000" />
+        <entry key="$PROJECT_DIR$/../self-serve-smoke-test" value="1484315727000" />
+        <entry key="$PROJECT_DIR$/../shared-ads-janus" value="3053309414000" />
+        <entry key="$PROJECT_DIR$/../shared-ads-janus-client" value="3053963820000" />
+        <entry key="$PROJECT_DIR$/../shared-aws" value="16404301386000" />
+        <entry key="$PROJECT_DIR$/../shared-scala" value="12212391904000" />
+        <entry key="$PROJECT_DIR$/../ssa-acl-client" value="2967403534000" />
+        <entry key="$PROJECT_DIR$/../ssa-acl-service" value="2961183890000" />
+        <entry key="$PROJECT_DIR$/../ssa-client-config-client" value="2964650906000" />
+        <entry key="$PROJECT_DIR$/../ssa-client-config-service" value="2964472790000" />
+        <entry key="$PROJECT_DIR$/../ssa-comms-smoke-test" value="1506002083000" />
+        <entry key="$PROJECT_DIR$/../ssa-event-client" value="2970976072000" />
+        <entry key="$PROJECT_DIR$/../ssa-event-collector" value="2978980424000" />
+        <entry key="$PROJECT_DIR$/../ssa-invoice-pdf-service" value="2986433726000" />
+        <entry key="$PROJECT_DIR$/../ssa-invoices-load-test" value="1494596519000" />
+        <entry key="$PROJECT_DIR$/../ssa-mailing-event-processor" value="2979366170000" />
+        <entry key="$PROJECT_DIR$/../ssa-moderation-service" value="2958449062000" />
+        <entry key="$PROJECT_DIR$/../ssa-payment-client" value="2958785500000" />
+        <entry key="$PROJECT_DIR$/../ssa-payment-service" value="2960528038000" />
+        <entry key="$PROJECT_DIR$/../ssa-payment-smoke-tests" value="1484316912000" />
+        <entry key="$PROJECT_DIR$/../ssa-privacy-broker-client" value="3040518846000" />
+        <entry key="$PROJECT_DIR$/../ssa-privacy-delegate" value="3037386546000" />
+        <entry key="$PROJECT_DIR$/../ssa-scheduled-invoices" value="2960838330000" />
+        <entry key="$PROJECT_DIR$/../vanaheim" value="3015169694000" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../ads-async-ate-worker" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ads-publisher-service" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../ssa-privacy-delegate" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../todo-list" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/scala/coursera/fpis/classes/IntSets.scala" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="3" />
+    <option name="y" value="-1159" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Control flow issuesJava</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Internationalization issuesJava</id>
+          </State>
+          <State>
+            <id>J2ME issuesJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java language level issuesJava</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Logging issuesJava</id>
+          </State>
+          <State>
+            <id>Manifest</id>
+          </State>
+          <State>
+            <id>Numeric issuesJava</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>Security issuesJava</id>
+          </State>
+          <State>
+            <id>Serialization issuesJava</id>
+          </State>
+          <State>
+            <id>Threading issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Ant inspections</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="scala" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="scala" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="scala [file:/Users/irek/workspace/scala/]" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="scala-build [file:/Users/irek/workspace/scala/]" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$USER_HOME$/fpinscala" value="1479312984000" />
+        <entry key="$USER_HOME$/private/fpinscala" value="1505122559000" />
+        <entry key="$PROJECT_DIR$" value="3085428692000" />
+        <entry key="$PROJECT_DIR$/../scala-with-cats" value="1518185735000" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="702419618" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="2125951362" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a80f6532-3cc2-463f-83ab-546c2540bfc1" name="Default Changelist" comment="" />
+      <created>1542714346692</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542714346692</updated>
+      <workItem from="1542714349057" duration="905000" />
+      <workItem from="1542715713118" duration="35000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="940000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="3" y="-1159" width="1440" height="900" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" visible="true" weight="0.5464968" />
+      <window_info anchor="bottom" id="Build" order="13" weight="0.1843318" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="PlantUML" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="sbt" order="6" />
+      <window_info anchor="right" id="SciView" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/project/build.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sbt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/coursera/fpis/classes/IntSets.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.40755627" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

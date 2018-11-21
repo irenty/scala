@@ -67,18 +67,6 @@ abstract class TweetSet {
     add(toList, that)
   }
 
-  def unionWithMutableCollection(that: TweetSet): TweetSet = {
-    val acc = scala.collection.mutable.ArrayBuffer.empty[Tweet]
-    foreach(tweet => acc += tweet)
-
-    def add(acc: scala.collection.mutable.ArrayBuffer[Tweet], s: TweetSet): TweetSet = {
-      if (acc.isEmpty) s
-      else add(acc.tail, s.incl(acc.head))
-    }
-    add(acc, that)
-  }
-
-
   /**
    * Returns the tweet from this set which has the greatest retweet count.
    *
@@ -248,11 +236,8 @@ object GoogleVsApple {
   val google = List("android", "Android", "galaxy", "Galaxy", "nexus", "Nexus")
   val apple = List("ios", "iOS", "iphone", "iPhone", "ipad", "iPad")
 
-  println("Started")
   val allSources = TweetReader.sources
-  println("Sources done")
   val allTweets = TweetReader.allTweets
-  println("Finished")
   def tweetFilter(words: Seq[String])(tweet: Tweet): Boolean =
     tweet.text.split(' ').intersect(words).nonEmpty
 

@@ -72,7 +72,7 @@ class HuffmanSuite extends FunSuite {
     val newFrenchTree = createCodeTree(allFrenchChars)
     val encoded1 = quickEncode(frenchCode)(allFrenchChars)
     val encoded2 = quickEncode(newFrenchTree)(allFrenchChars)
-
+    println(s"french: ${encoded1.size} vs my french: ${encoded2.size}")
     assert(encoded2.size <= encoded1.size)
 
 

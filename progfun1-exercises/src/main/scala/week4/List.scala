@@ -1,8 +1,5 @@
 package week4
 
-package week3
-
-
 object ConsApp extends App {
   val l = new Cons(1, new Cons(4, new Nil))
   println(l.head)

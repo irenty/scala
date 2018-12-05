@@ -1,5 +1,7 @@
 package forcomp
 
+import forcomp.Anagrams.{Occurrences, Sentence, combinations, sentenceOccurrences}
+
 
 object Anagrams {
 
@@ -34,10 +36,10 @@ object Anagrams {
    *
    *  Note: you must use `groupBy` to implement this method!
    */
-  def wordOccurrences(w: Word): Occurrences = ???
+  def wordOccurrences(w: Word): Occurrences = w.toLowerCase.toList.groupBy(c => c).mapValues(_.size).toList.sortBy(_._1)
 
   /** Converts a sentence into its character occurrence list. */
-  def sentenceOccurrences(s: Sentence): Occurrences = ???
+  def sentenceOccurrences(s: Sentence): Occurrences = wordOccurrences(s mkString "")
 
   /** The `dictionaryByOccurrences` is a `Map` from different occurrences to a sequence of all
    *  the words that have that occurrence count.
@@ -54,10 +56,14 @@ object Anagrams {
    *    List(('a', 1), ('e', 1), ('t', 1)) -> Seq("ate", "eat", "tea")
    *
    */
-  lazy val dictionaryByOccurrences: Map[Occurrences, List[Word]] = ???
+  lazy val dictionaryByOccurrences: Map[Occurrences, List[Word]] =
+    dictionary
+      .map(word => (wordOccurrences(word) -> word))
+      .groupBy(_._1)
+      .mapValues(_.map(_._2))
 
   /** Returns all the anagrams of a given word. */
-  def wordAnagrams(word: Word): List[Word] = ???
+  def wordAnagrams(word: Word): List[Word] = dictionaryByOccurrences(wordOccurrences(word))
 
   /** Returns the list of all subsets of the occurrence list.
    *  This includes the occurrence itself, i.e. `List(('k', 1), ('o', 1))`
@@ -81,7 +87,32 @@ object Anagrams {
    *  Note that the order of the occurrence list subsets does not matter -- the subsets
    *  in the example above could have been displayed in some other order.
    */
-  def combinations(occurrences: Occurrences): List[Occurrences] = ???
+  def combinations(occurrences: Occurrences): List[Occurrences] = {
+    val allLetterCombinations = for {
+      (letter, maxRepeats) <- occurrences
+      repeats <- 1 to maxRepeats
+    } yield (letter, repeats)
+
+    val allCombinationsGrouped = allLetterCombinations groupBy(_._1)
+
+    def createCombinations(currentCombinations: List[Occurrences], remainingLetters: List[Char]): List[Occurrences] =
+      if (remainingLetters.isEmpty) currentCombinations
+      else {
+        val letter = remainingLetters.head
+
+        val newOccurences: List[Occurrences]  = for {
+          letterOccurence <- allCombinationsGrouped(letter)
+          existingOccurence <- currentCombinations
+        } yield existingOccurence ++ List(letterOccurence)
+
+        val nextCurrentOccurences = newOccurences ++ currentCombinations
+        createCombinations(nextCurrentOccurences, remainingLetters.tail)
+      }
+
+    createCombinations(List(List()), occurrences.map(_._1))
+
+  }
+
 
   /** Subtracts occurrence list `y` from occurrence list `x`.
    *
@@ -93,7 +124,12 @@ object Anagrams {
    *  Note: the resulting value is an occurrence - meaning it is sorted
    *  and has no zero-entries.
    */
-  def subtract(x: Occurrences, y: Occurrences): Occurrences = ???
+  def subtract(x: Occurrences, y: Occurrences): Occurrences = {
+    val yGrouped = y groupBy(_._1) mapValues(_.head._2)
+    x map {
+      case (ch, freq) => (ch, freq - yGrouped.getOrElse(ch, 0))
+    } filter(_._2 > 0)
+  }
 
   /** Returns a list of all anagram sentences of the given sentence.
    *
@@ -135,5 +171,69 @@ object Anagrams {
    *
    *  Note: There is only one anagram of an empty sentence.
    */
-  def sentenceAnagrams(sentence: Sentence): List[Sentence] = ???
+  def sentenceAnagrams(sentence: Sentence): List[Sentence] = {
+
+    def allPossibleWordOccurences(occurrences: Occurrences): List[Occurrences] = {
+      combinations(occurrences) filter(occ => dictionaryByOccurrences.contains(occ))
+    }
+
+    def generateSentencesAsOccurences(builtSentence: List[Occurrences], remainingOccurences: Occurrences): List[List[Occurrences]] = {
+      if (remainingOccurences.isEmpty) List(builtSentence)
+      else for {
+        word <- allPossibleWordOccurences(remainingOccurences)
+        sentence <- generateSentencesAsOccurences(word :: builtSentence, subtract(remainingOccurences, word))
+      } yield sentence
+    }
+
+    val sentencesAsOccurences = generateSentencesAsOccurences(List.empty, sentenceOccurrences(sentence))
+
+    def toWordSentences(sentenceAcc: Sentence, occurences: List[Occurrences]): List[Sentence] =
+      if (occurences.isEmpty) List(sentenceAcc)
+      else for {
+        word <- dictionaryByOccurrences(occurences.head)
+        sentence <- toWordSentences(word :: sentenceAcc, occurences.tail)
+      } yield sentence
+
+    for {
+      occurance <- sentencesAsOccurences
+      sentence <- toWordSentences(List.empty, occurance)
+    } yield sentence
+  }
+
+  def sentenceAnagramsMemo(sentence: Sentence): List[Sentence] = {
+
+    val allCombinationsSet = combinations(sentenceOccurrences(sentence)).toSet
+    val allPossibleWordDictionaryMemo = dictionaryByOccurrences.filterKeys(allCombinationsSet.contains(_))
+
+    def allPossibleWordOccurences(occurrences: Occurrences): List[Occurrences] = {
+      combinations(occurrences) filter(occ => allPossibleWordDictionaryMemo.contains(occ))
+    }
+
+    // TODO: Ty not to recompute some anagrams more than once when recursively solving the problem. Think about a concrete example and a situation where you compute the anagrams of the same subset of an occurrence list multiple times.
+    val memo = Map[Occurrences, List[Occurrences]]()
+    def generateSentencesAsOccurences(builtSentence: List[Occurrences], remainingOccurences: Occurrences, occurenceMemo: List[Occurrences]): List[List[Occurrences]] = {
+      if (remainingOccurences.isEmpty) {
+        List(builtSentence)
+      } else for {
+        wordOccurence <- allPossibleWordOccurences(remainingOccurences)
+        newRemainingOccurences = subtract(remainingOccurences, wordOccurence)
+        newOccurenceMemo = newRemainingOccurences :: occurenceMemo
+        sentence <- generateSentencesAsOccurences(wordOccurence :: builtSentence, newRemainingOccurences, newOccurenceMemo)
+      } yield sentence
+    }
+
+    val sentencesAsOccurences = generateSentencesAsOccurences(List.empty, sentenceOccurrences(sentence), List.empty)
+
+    def toWordSentences(sentenceAcc: Sentence, occurences: List[Occurrences]): List[Sentence] =
+      if (occurences.isEmpty) List(sentenceAcc)
+      else for {
+        word <- dictionaryByOccurrences(occurences.head)
+        sentence <- toWordSentences(word :: sentenceAcc, occurences.tail)
+      } yield sentence
+
+    for {
+      occurance <- sentencesAsOccurences
+      sentence <- toWordSentences(List.empty, occurance)
+    } yield sentence
+  }
 }

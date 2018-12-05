@@ -18,9 +18,8 @@ object Main {
   def pascal(c: Int, r: Int): Int = {
     def isEdge(c: Int, r: Int) = r == 0 || c == 0 || c == r
 
-    if (isEdge(c, r)) return 1
-
-    pascal(c - 1, r - 1) + pascal(c, r - 1)
+    if (isEdge(c, r)) 1
+    else pascal(c - 1, r - 1) + pascal(c, r - 1)
   }
 
   /**
@@ -68,14 +67,14 @@ object Main {
 
     def countChangeForThatCoinOnly(coin: Int, money: Int): Int = if (money % coin == 0) 1 else 0
 
-    if (money <= 0) return 0
-    if (coins.isEmpty) return 0
+    if (money <= 0 || coins.isEmpty) 0
+    else {
+      val thatCoin = coins.head
+      val withoutThatCoin = coins.tail
+      val countsForRepeatedCoin = for(remainingMoney <- (money - thatCoin) to 0 by (-thatCoin)) yield countChange(remainingMoney, withoutThatCoin)
 
-    val thatCoin = coins.head
-    val withoutThatCoin = coins.tail
-    val countsForRepeatedCoin = for(remainingMoney <- (money - thatCoin) to 0 by (-thatCoin)) yield countChange(remainingMoney, withoutThatCoin)
-
-    countChangeForThatCoinOnly(thatCoin, money) + countsForRepeatedCoin.sum + countChange(money, withoutThatCoin)
+      countChangeForThatCoinOnly(thatCoin, money) + countsForRepeatedCoin.sum + countChange(money, withoutThatCoin)
+    }
   }
 
 }

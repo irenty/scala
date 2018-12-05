@@ -43,9 +43,9 @@ class FunSetSuite extends FunSuite {
    * Try it out! Change the values so that the assertion fails, and look at the
    * error message.
    */
-  // test("adding ints") {
-  //   assert(1 + 2 === 3)
-  // }
+   test("adding ints") {
+     assert(1 + 2 === 3)
+   }
 
 
   import FunSets._
@@ -110,5 +110,74 @@ class FunSetSuite extends FunSuite {
     }
   }
 
+  test("intersect contains common elements of both sets") {
+    new TestSets {
+      val s12 = union(s1, s2)
+      val s23 = union(s2, s3)
+      val int = intersect(s12, s23)
+      assert(!contains(int, 1), "Intersect 1")
+      assert(contains(int, 2), "Intersect 2")
+      assert(!contains(int, 3), "Intersect 3")
+    }
+  }
+
+  test("diff contains elements from 1st set but not 2nd") {
+    new TestSets {
+      val s12 = union(s1, s2)
+      val s23 = union(s2, s3)
+      val int = diff(s12, s23)
+      assert(contains(int, 1), "diff 1")
+      assert(!contains(int, 2), "diff 2")
+      assert(!contains(int, 3), "diff 3")
+    }
+  }
+
+  test("filter returns set with elements that hold the predicate") {
+    new TestSets {
+      val s12 = union(s1, s2)
+      val s123 = union(s12, s3)
+
+      val filtered = filter(s123, _ > 1)
+      assert(!contains(filtered, 1), "filtered 1")
+      assert(contains(filtered, 2), "filtered 2")
+      assert(contains(filtered, 3), "filtered 3")
+    }
+  }
+
+  test("given set of ints, forall should return true given predicate > 0") {
+    new TestSets {
+      val s12 = union(s1, s2)
+      val s123 = union(s12, s3)
+
+      assert(forall(s123, _ > 0))
+      assert(forall(s123, _ >= 1))
+      assert(!forall(s123, _ > 1))
+    }
+  }
+
+  test("given set of ints, exists should return true given predicate divisible by 2") {
+    new TestSets {
+      val s12 = union(s1, s2)
+      val s123 = union(s12, s3)
+
+      assert(exists(s123, _ % 2 == 0))
+      assert(exists(s123, _ >= 3))
+      assert(!exists(s123, _ > 3))
+    }
+  }
+
+  test("given set of ints, map should transform a set") {
+    new TestSets {
+      val s12 = union(s1, s2)
+      val s123 = union(s12, s3)
+
+      val transformed = map(s123, _ * 2)
+      assert(!contains(transformed, 1), "1")
+      assert(contains(transformed, 2), "transformed 1")
+      assert(contains(transformed, 4), "transformed 2")
+      assert(contains(transformed, 6), "transformed 3")
+
+    }
+  }
 
 }
